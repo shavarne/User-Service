@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User saveUser(User user) {
-
+        //creating random userId
         String randomUserId = UUID.randomUUID().toString();
         user.setUserId(randomUserId);
         Optional<User> existingOptional = userRepository.findByNameAndEmail(user.getName(), user.getEmail());
